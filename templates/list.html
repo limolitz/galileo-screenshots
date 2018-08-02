@@ -4,7 +4,7 @@
 <h2>List screenshots</h2>
 <ul>
   {% for screenshot in object_list %}
-    <li>{{ screenshot.url }}</li>
+    <li>#{{ screenshot.id }}: {{ screenshot.url }}</li>
   {% endfor %}
 </ul>
 {% endblock %}

@@ -1,7 +1,6 @@
 from django.views.generic import TemplateView
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
-from django.urls import reverse
 from .models import Screenshot
 
 
