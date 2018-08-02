@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>List screenshots</h2>
+<ul>
+  {% for screenshot in object_list %}
+    <li>{{ screenshot.url }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
