@@ -5,7 +5,8 @@ from .models import Screenshot
 from selenium import webdriver
 
 @shared_task
-def take_screenshot(screenshot):
+def take_screenshot(screenshot_pk):
+    screenshot = Screenshot.objects.get(pk=screenshot_pk)
     url = screenshot.url
     # call Selenium webdriver
 

@@ -44,7 +44,7 @@ def create_screenshot(request):
             screenshot = Screenshot(url=form.cleaned_data['url'])
             screenshot.save()
             # call screenshot function
-            take_screenshot(screenshot)
+            take_screenshot.delay(screenshot.id)
             # redirect to a new URL:
             return HttpResponseRedirect(reverse('list'))
 
