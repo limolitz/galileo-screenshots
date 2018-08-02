@@ -1,5 +1,7 @@
 from django.views.generic import TemplateView
 from django.views.generic import ListView
+from django.views.generic.edit import CreateView
+from django.urls import reverse
 from .models import Screenshot
 
 
@@ -11,11 +13,13 @@ class AboutPageView(TemplateView):
     template_name = 'about.html'
 
 
-class RequestPageView(TemplateView):
-    template_name = 'request.html'
-
-
 class ListPageView(ListView):
     model = Screenshot
     template_name = 'list.html'
 
+
+class ScreenshotCreate(CreateView):
+    model = Screenshot
+    fields = '__all__'
+    template_name = 'create.html'
+    success_url = '/screenshots/list/'
