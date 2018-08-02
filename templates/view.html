@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+<h2>View screenshot #{{ screenshot.id }}.</h2>
+    Screenshot of {{  screenshot.url }}
+    {% if screenshot.screenshot_name %}
+        <br><img src="{{ MEDIA_URL }}{{ screenshot.screenshot_name }}">
+    {% else %}
+        Screenshot is not yet processed. Please wait.
+    {% endif %}
+{% endblock %}

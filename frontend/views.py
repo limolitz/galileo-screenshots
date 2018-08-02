@@ -3,7 +3,7 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Screenshot
 from .forms import CreateScreenshotForm
@@ -53,3 +53,7 @@ def create_screenshot(request):
         form = CreateScreenshotForm()
 
     return render(request, 'create.html', {'form': form})
+
+def view_screenshot(request, pk):
+    screenshot = get_object_or_404(Screenshot, pk=pk)
+    return render(request, 'view.html', {'screenshot': screenshot})

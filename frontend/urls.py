@@ -7,4 +7,5 @@ urlpatterns = [
     path('about/', views.AboutPageView.as_view(), name='about'),
     path('screenshots/new/', views.create_screenshot, name='request'),
     path('screenshots/list/', views.ListPageView.as_view(), name='list'),
+    path('screenshots/view/<int:pk>/', views.view_screenshot, name='view'),
 ]

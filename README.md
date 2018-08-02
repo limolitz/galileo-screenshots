@@ -5,7 +5,8 @@ A tool which allows user to screenshot any website. It is written in Django and 
 
 Install
 =======
-* Install pipenv
+* Install pipenv, RabbitMQ
+* Put a chromedriver in your $PATH
 * Install Python virtualenv with pipenv
 
 ```bash
@@ -30,7 +31,7 @@ celery -A galileo_screenshots worker -l info
 
 References
 ==========
-I used several tutorials for bootrapping this project:
+I used several tutorials for bootstrapping this project:
 * https://djangoforbeginners.com/message-board/
 * https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 * https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views
