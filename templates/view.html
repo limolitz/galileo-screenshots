@@ -1,12 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% load static %}
-<h2>View screenshot #{{ screenshot.id }}.</h2>
-    Screenshot of {{  screenshot.url }}
-    {% if screenshot.screenshot_name %}
-        <br><img src="{{ MEDIA_URL }}{{ screenshot.screenshot_name }}">
-    {% else %}
-        Screenshot is not yet processed. Please wait.
-    {% endif %}
+    <div class="page-header">
+        <h1>View screenshot #{{ screenshot.id }}.</h1>
+    </div>
+    <div class="well">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-primary">URL: {{  screenshot.url }}</li>
+          <li class="list-group-item">ID: {{ screenshot.id }}</li>
+          <li class="list-group-item">User Agent: Chrome</li>
+          <li class="list-group-item">Requested on </li>
+          {% if screenshot.screenshot_name %}
+          <li class="list-group-item">Screenshot taken on</li>
+          {% endif %}
+        </ul>
+        {% if screenshot.screenshot_name %}
+            <!-- Button trigger modal -->
+            <img src="{{ MEDIA_URL }}{{ screenshot.screenshot_name }}" class="img-thumbnail" data-toggle="modal" data-target="#exampleModalLong" style="width:200px;height:200px">
+
+            <!-- Modal -->
+            <div class="modal fade " id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Screenshot of {{  screenshot.url }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="{{ MEDIA_URL }}{{ screenshot.screenshot_name }}" class="img-fluid">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% else %}
+            <div class="alert alert-info" role="alert">
+                Screenshot is not yet processed. Please wait.
+            </div>
+        {% endif %}
+    </div>
+<h2></h2>
+
 {% endblock %}

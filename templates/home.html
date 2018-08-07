@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Homepage.</h2>
-
-    On this website, you can generate screenshots of any given URL.
+    <div class="page-header">
+        <h1>What To Do?</h1>
+    </div>
+    <div class="well">
+        <p>This tool generates a screenshot of a given URL.</p>
+        <p>Go to <a href="{% url 'request' %}">this page</a> if you want to request a new screenshot.</p>
+        <p>Go to <a href="{% url 'list' %}">this page</a> to see the list of the existing screenshots and see the results.</p>
+    </div>
 {% endblock %}
 
 

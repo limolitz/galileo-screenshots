@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>List screenshots</h2>
-<ul>
-  {% for screenshot in object_list %}
-      <li><a href="/screenshots/view/{{ screenshot.id }}/">#{{ screenshot.id }}: {{ screenshot.url }}</a></li>
-  {% endfor %}
-</ul>
+    <div class="page-header">
+        <h1>List screenshots.</h1>
+    </div>
+    <div class="well">
+        <p>This tool generates a screenshot of a given URL.</p>
+        <ul>
+          {% for screenshot in object_list %}
+              <li><a href="/screenshots/view/{{ screenshot.id }}/">#{{ screenshot.id }}: {{ screenshot.url }}</a></li>
+          {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
