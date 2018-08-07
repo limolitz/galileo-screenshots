@@ -4,8 +4,11 @@ from os import path
 from celery import shared_task
 from .models import Screenshot
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 from django.conf import settings
 from django.utils import timezone
+
 
 @shared_task
 def take_screenshot(screenshot_pk):
@@ -13,7 +16,10 @@ def take_screenshot(screenshot_pk):
     url = screenshot.url
     # call Selenium webdriver
 
-    driver = webdriver.Chrome('chromedriver')
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+
+    driver = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
     driver.get(url)
     # generate random file name
     random_filename = get_random_string(length=64)
