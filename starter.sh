@@ -2,6 +2,8 @@
 
 service rabbitmq-server start
 
+export PATH="/code:$PATH"
+
 # Start the first process
 python manage.py runserver 0.0.0.0:8000 &
 status=$?

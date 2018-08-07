@@ -25,7 +25,7 @@ SECRET_KEY = ')q6a4u_0cxsqrf3sqv$^#7@g47#84#5sf4a=8enz#!2t7e+4z4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vesper.wasmitnetzen.de', 'localhost']
 
 
 # Application definition
