@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="">
-		<meta name="author" content="Florin Godard">
-		<link rel="icon" href="favicon.ico">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="Florin Godard">
+        <link rel="icon" href="favicon.ico">
 
-		<title>Galileo Screenshots | floringodard.eu</title>
+        <title>Galileo Screenshots | floringodard.eu</title>
 
         {% load static %}
 
-		<!-- Bootstrap core CSS -->
-		<link href="{% static "frontend/bootstrap.min.css" %}" rel="stylesheet">
-		<!-- Bootstrap theme -->
-		<link href="{% static "frontend/bootstrap-theme.min.css" %}" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="{% static "frontend/bootstrap.min.css" %}" rel="stylesheet">
+        <!-- Bootstrap theme -->
+        <link href="{% static "frontend/bootstrap-theme.min.css" %}" rel="stylesheet">
+        <link href="{% static "frontend/style.css" %}" rel="stylesheet">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
 
-	<body role="document">
+    <body role="document">
 
-		<!-- Fixed navbar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Galileo Screenshots</a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="{% url 'request' %}">Request New Screenshot</a></li>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Galileo Screenshots</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'request' %}">Request New Screenshot</a></li>
                         <li><a href="{% url 'list' %}">View Screenshots</a></li>
-						<li><a href="https://keybase.io/wasmitnetzen">Keybase.io</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</nav>
+                        <li><a href="https://keybase.io/wasmitnetzen">Keybase.io</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
 
-		<div class="container theme-showcase" role="main">
-			<div class="jumbotron">
-				<h1>Galileo Screenshots</h1>
+        <div class="container theme-showcase" role="main">
+            <div class="jumbotron">
+                <h1>Galileo Screenshots</h1>
                 <p>This tool generates a screenshot of a given URL.</p>
-				<p>The code can be found on <a href="https://github.com/wasmitnetzen">Github</a> and it is licenced under the MIT License.</p>
+                <p>The code can be found on <a href="https://github.com/wasmitnetzen">Github</a> and it is licenced under the MIT License.</p>
                 <p>It uses Django, Celery, RabbitMQ and Selenium.</p>
-			</div>
+            </div>
 
             {% block content %}
             {% endblock %}
         </div> <!-- /container -->
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="{% static "frontend/bootstrap.min.js" %}"></script>
-	</body>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="{% static "frontend/bootstrap.min.js" %}"></script>
+    </body>
 </html>

@@ -16,7 +16,10 @@
         </ul>
         {% if screenshot.screenshot_name %}
             <!-- Button trigger modal -->
-            <img src="{{ MEDIA_URL }}{{ screenshot.screenshot_name }}" class="img-thumbnail" data-toggle="modal" data-target="#exampleModalLong" style="width:200px;height:200px">
+            <div style="background-image:url('{{ MEDIA_URL }}{{ screenshot.screenshot_name }}');background-size:100% auto;width:200px;height:200px;cursor:pointer"" class="img-fluid fg-hover-modal" data-toggle="modal" data-target="#exampleModalLong">
+                <div class="fg-hover-modal-open">View Screenshot</div>
+            </div>
+
 
             <!-- Modal -->
             <div class="modal fade " id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

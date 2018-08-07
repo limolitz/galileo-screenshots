@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class CreateScreenshotForm(forms.Form):
-    url = forms.URLField(help_text="The URL you want to screenshot.")
+    url = forms.URLField()
 
     def clean_renewal_date(self):
         url = self.cleaned_data['url']

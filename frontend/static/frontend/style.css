@@ -1,0 +1,14 @@
+.fg-hover-modal-open {
+    width:100%;
+    height:100%;
+    color:white;
+    font-size: 0;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+}
+
+.fg-hover-modal-open:hover {
+    background:rgba(0,0,0,0.5);
+    font-size: inherit;
+}
