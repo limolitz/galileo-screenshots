@@ -5,11 +5,26 @@
         <h1>List screenshots.</h1>
     </div>
     <div class="well">
-        <p>This tool generates a screenshot of a given URL.</p>
-        <ul>
-          {% for screenshot in object_list %}
-              <li><a href="/screenshots/view/{{ screenshot.id }}/">#{{ screenshot.id }}: {{ screenshot.url }}</a></li>
-          {% endfor %}
-        </ul>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">URL</th>
+              <th scope="col">Date</th>
+              <th scope="col">View</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for screenshot in object_list %}
+                <tr>
+                  <th scope="row">{{ screenshot.id }}</th>
+                  <td>{{ screenshot.url }}</td>
+                  <td>Today</td>
+                  <td><a href="/view/{{ screenshot.id }}/" class="btn btn-primary" role="button">View Screenshot</a></td>
+                </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
     </div>
 {% endblock %}

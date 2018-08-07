@@ -9,7 +9,7 @@
 		<meta name="author" content="Florin Godard">
 		<link rel="icon" href="favicon.ico">
 
-		<title>floringodard.eu | Galileo Screenshots</title>
+		<title>Galileo Screenshots | floringodard.eu</title>
 
         {% load static %}
 
@@ -41,10 +41,8 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'request' %}">Request New Screenshot</a></li>
-                        <li><a href="{% url 'list' %}">List Screenshots</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
+						<li><a href="{% url 'request' %}">Request New Screenshot</a></li>
+                        <li><a href="{% url 'list' %}">View Screenshots</a></li>
 						<li><a href="https://keybase.io/wasmitnetzen">Keybase.io</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -54,7 +52,9 @@
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
 				<h1>Galileo Screenshots</h1>
+                <p>This tool generates a screenshot of a given URL.</p>
 				<p>The code can be found on <a href="https://github.com/wasmitnetzen">Github</a> and it is licenced under the MIT License.</p>
+                <p>It uses Django, Celery, RabbitMQ and Selenium.</p>
 			</div>
 
             {% block content %}
