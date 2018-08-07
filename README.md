@@ -19,6 +19,7 @@ Run
 Only the built-in development server of Django is supported so far.
 ```bash
 pipenv shell
+python3 manage.py migrate
 python3 manage.py runserver
 ```
 
