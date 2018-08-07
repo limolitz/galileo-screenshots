@@ -12,3 +12,9 @@
     background:rgba(0,0,0,0.5);
     font-size: inherit;
 }
+
+.urlinput {
+    font-size: 30pt;
+    width: 90%;
+    text-align: center;
+}

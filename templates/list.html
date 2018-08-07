@@ -19,7 +19,7 @@
                 <tr>
                   <th scope="row">{{ screenshot.id }}</th>
                   <td>{{ screenshot.url }}</td>
-                  <td>Today</td>
+                  <td>{{  screenshot.request_time|date:'Y-m-d H:i:s' }}</td>
                   <td><a href="/view/{{ screenshot.id }}/" class="btn btn-primary" role="button">View Screenshot</a></td>
                 </tr>
             {% endfor %}
